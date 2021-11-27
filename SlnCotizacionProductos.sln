@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeDepot", "HomeDepot\HomeDepot.csproj", "{B980DD8E-85D9-4E14-9C9C-D23D2E4BD62A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeDepot.Tests", "HomeDepot.Tests\HomeDepot.Tests.csproj", "{5726E52C-C4B2-473C-8CBD-E923EFEE511A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B980DD8E-85D9-4E14-9C9C-D23D2E4BD62A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B980DD8E-85D9-4E14-9C9C-D23D2E4BD62A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B980DD8E-85D9-4E14-9C9C-D23D2E4BD62A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B980DD8E-85D9-4E14-9C9C-D23D2E4BD62A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5726E52C-C4B2-473C-8CBD-E923EFEE511A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5726E52C-C4B2-473C-8CBD-E923EFEE511A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5726E52C-C4B2-473C-8CBD-E923EFEE511A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5726E52C-C4B2-473C-8CBD-E923EFEE511A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CA3EF70-0E09-458F-A06E-C98782E62555}
+	EndGlobalSection
+EndGlobal
