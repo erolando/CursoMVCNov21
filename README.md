@@ -3,6 +3,6 @@
 
 Proyecto generado para el curso de MVC ASP Net Framework
 
-Prueba
+Prueba2
 
 Prueba
