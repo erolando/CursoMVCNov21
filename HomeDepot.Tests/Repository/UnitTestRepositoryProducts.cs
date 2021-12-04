@@ -23,10 +23,33 @@ namespace HomeDepot.Tests.Repository
 
             foreach (ModelProduct product in results)
             {
-                Assert.IsTrue(product.Nombre.Length > 0);
-                Assert.IsNotNull(product.IdCategoriaProducto);
-                Assert.IsFalse(product.IdCategoriaProducto < 0);
+                ValidateModel(product);
             }
+        }
+
+        [TestMethod]
+        public void TestInsert()
+        {
+            ModelProduct newProduct = new ModelProduct()
+            {
+                Nombre = "Prueba " + DateTime.Now.ToString(),
+                Descripcion = $"Prueba {DateTime.Now}",
+                IdCategoriaProducto = 1,
+                CodigoBarras = Guid.NewGuid().ToString(),
+                Imagen = new byte[0]
+            };
+            ModelProduct product = Repository.Add(newProduct);
+
+            ValidateModel(product);
+        }
+
+        private static void ValidateModel(ModelProduct product)
+        {
+            Assert.IsNotNull(product);
+            Assert.IsTrue(product.Nombre.Length > 0);
+            Assert.IsTrue(product.Descripcion.Length > 0);
+            Assert.IsNotNull(product.IdCategoriaProducto);
+            Assert.IsFalse(product.IdCategoriaProducto < 0);
         }
     }
 }

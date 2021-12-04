@@ -6,8 +6,8 @@ namespace HomeDepot.DataLayer.Interfaces
     {
         Entity Get(int id);
         List<Entity> GetAll();
-        void Add(Entity entity);
-        void Delete(Entity entity);
-        void update(Entity entity);
+        Entity Add(Entity entity);
+        Entity Delete(Entity entity);
+        Entity update(Entity entity);
     }
 }
