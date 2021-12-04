@@ -25,6 +25,13 @@ namespace HomeDepot.DataLayer.Repositories
                     commandType: CommandType.StoredProcedure);
 
                 return results.AsList<ModelProduct>().FirstOrDefault();
+                /*
+                 
+                 codigo
+                 
+                 
+                 
+                 */
             }
         }
 
