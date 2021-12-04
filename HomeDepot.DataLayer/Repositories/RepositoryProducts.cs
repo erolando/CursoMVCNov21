@@ -10,7 +10,13 @@ namespace HomeDepot.DataLayer.Repositories
     {
         public void Add(ModelProduct entity)
         {
-            throw new System.NotImplementedException();
+            /*
+            
+            
+            Modificacion desde github web
+            
+            */
+            Console.WriteLine("Prueba");
         }
 
         public void Delete(ModelProduct entity)
