@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using HomeDepot.DomainLayer.BusinessObject;
+using HomeDepot.DomainLayer.DTO;
 using System.Web.Mvc;
 
 namespace HomeDepot.Controllers
 {
+
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -25,6 +24,16 @@ namespace HomeDepot.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        BOProducts bussinessProduct = new BOProducts("");
+        public ActionResult Insertar(string nombre)
+        {
+            var rq = new DomainLayer.RQ.RQProduct()
+            {
+                Nombre = nombre
+            };
+            DTOProduct result = bussinessProduct.Insert(rq);
+            return View(result);
         }
     }
 }

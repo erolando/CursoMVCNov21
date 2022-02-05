@@ -12,7 +12,7 @@ namespace HomeDepot.Tests.Repository
         private readonly RepositoryProducts Repository;
         public UnitTestRepositoryProducts()
         {
-            Repository = new RepositoryProducts();
+            Repository = new RepositoryProducts(Constants.ConnStringDev);
         }
         [TestMethod]
         public void TestGetAll()

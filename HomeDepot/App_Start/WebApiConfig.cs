@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.Web.Http.Routing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Routing;
 
 namespace HomeDepot
 {
@@ -12,8 +14,15 @@ namespace HomeDepot
             // Configuración y servicios de API web
 
             // Rutas de API web
-            config.MapHttpAttributeRoutes();
-
+            var contrainsResolver = new DefaultInlineConstraintResolver()
+            {
+                ConstraintMap =
+                {
+                    ["apiVersion"] = typeof(ApiVersionRouteConstraint)
+                }
+            };
+            config.MapHttpAttributeRoutes(contrainsResolver);
+            config.AddApiVersioning();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

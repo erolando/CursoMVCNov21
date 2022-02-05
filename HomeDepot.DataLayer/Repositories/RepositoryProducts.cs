@@ -9,17 +9,22 @@ namespace HomeDepot.DataLayer.Repositories
 {
     public class RepositoryProducts : BaseRepository, IRepository<ModelProduct>
     {
+        public RepositoryProducts(string connectionString) : base(connectionString)
+        {
+
+        }
+        
         public ModelProduct Add(ModelProduct entity)
         {
             using (var conn = CreateConnection())
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("@Nombre", entity.Nombre);
-                parameters.Add("@Imagen", entity.Imagen);
+                //parameters.Add("@Imagen", entity.Imagen);
                 parameters.Add("@IdCategoriaProducto", entity.IdCategoriaProducto);
                 parameters.Add("@Descripcion", entity.Descripcion);
                 parameters.Add("@CodigoBarras", entity.CodigoBarras);
-                
+
                 var results = conn.Query<ModelProduct>("dbo.SPIProducto",
                     param: parameters,
                     commandType: CommandType.StoredProcedure);

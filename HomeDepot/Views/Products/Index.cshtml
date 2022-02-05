@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        productList();
+    });
+
+    function productList() {
+        // Call Web API to get a list of Product
+        $.ajax({
+            url: '/api/ProductsApi/',
+            type: 'GET',
+            dataType: 'json',
+            success: function (products) {
+                productListSuccess(products);
+            },
+            error: function (request, message, error) {
+                //handleException(request, message, error);
+            }
+        });
+    }
+
+    function productListSuccess(products) {
+        // Iterate over the collection of data
+        $.each(products, function (index, product) {
+            // Add a row to the Product table
+            productAddRow(product);
+        });
+    }
+
+    function productAddRow(product) {
+        // Check if <tbody> tag exists, add one if not
+        if ($("#productTable tbody").length == 0) {
+            $("#productTable").append("<tbody></tbody>");
+        }
+        // Append row to <table>
+        $("#productTable tbody").append(
+            productBuildTableRow(product));
+    }
+
+    function productBuildTableRow(product) {
+        var ret =
+            "<tr>" +
+            "<td>" + product.Name + "</td>" +
+            "<td>" + product.CodigoBarras + "</td>"
+        "</tr>";
+        return ret;
+    }
+</script>
+
+<div class="row">
+    <div class="col-sm-6">
+        <table id="productTable"
+               class="table table-bordered
+                  table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Codigo Barras</th>
+                    
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
